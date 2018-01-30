@@ -1,0 +1,28 @@
+<% include ./partials/header %>
+
+<div class="ui main text container">
+  <div class="ui huge header">Recipe Book</div>
+  <div class="ui top attached segment">
+    <div class="ui divided items">
+      <% recipes.forEach((recipe) => { %>
+        <div class="item">
+          <div class="image">
+            <img src="<%= recipe.image %>">
+          </div>
+          <div class="content">
+            <a class="header" href="/recipes/<%+ recipe._id %>"><%= recipe.title %></a>
+            <div class="extra">
+              <a class="ui floated basic violet button" href="/recipes/<%= recipe._id %>">
+                Read More
+                <i class"right chevron icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+
+<% include ./partials/footer %>
