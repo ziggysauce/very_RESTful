@@ -1,26 +1,25 @@
 <% include ./partials/header %>
 
-<div class="ui main text container">
-  <div class="ui huge header">Recipe Book</div>
-  <div class="ui top attached segment">
-    <div class="ui divided items">
-      <% recipes.forEach((recipe) => { %>
-        <div class="item">
-          <div class="image">
-            <img src="<%= recipe.image %>">
-          </div>
-          <div class="content">
-            <a class="header" href="/recipes/<%+ recipe._id %>"><%= recipe.title %></a>
-            <div class="extra">
-              <a class="ui floated basic violet button" href="/recipes/<%= recipe._id %>">
-                Read More
-                <i class"right chevron icon"></i>
-              </a>
-            </div>
-          </div>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to kitchen tbh!</h1>
+    <p class="lead">This is a collection of our favorite recipes.</p>
+    <a class="btn btn-success btn-lg" href="/recipes/add" role="button">New Recipe</a>
+  </div>
+    
+  <div class="container" style="display: flex; flex-wrap: wrap;">
+    <% recipes.forEach((recipe) => { %>
+      <div class="card">
+        <img class="card-img-top" src="<%= recipe.image %>" alt="Image of recipe">
+        <div class="card-body">
+          <h4 class="card-title" href="/recipes/<%= recipe._id %>"><%= recipe.title %></h4>
+          <a class="btn btn-md btn-primary" href="/recipes/<%= recipe._id %>">
+            View
+            <i class="fas fa-chevron-right"></i>
+          </a>
         </div>
-      <% }) %>
-    </div>
+      </div>
+    <% }) %>
   </div>
 </div>
 

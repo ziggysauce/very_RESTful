@@ -1,11 +1,48 @@
-i.icon {
+.fa-utensils {
   font-size: 2em;
+  color: #FFF;
+  padding-right: 10px;
 }
 
-.container.main {
+.card {
+  width: 18rem; 
+  margin: 10px;
+}
+
+.card img {
+  max-height: 18rem;
+}
+
+.view-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
   margin-top: 7em;
+  margin-bottom: 7em;
 }
 
-#delete {
-  display: inline;
+.add-wrapper {
+  max-width: 30em;;
+}
+
+.page-header {
+  font-size: 3em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  height: 5em;
+  background: #353a3f;
+  color: #9a9d9f;
+  text-align: center;
+  padding: 2em 0em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }

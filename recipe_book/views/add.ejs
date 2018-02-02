@@ -1,26 +1,27 @@
 <% include ./partials/header %>
 
-<div class="ui main text container segment">
-  <div class="ui huge header">Add Recipe</div>
-  <form class="ui form" action="/recipes" method="POST">
-    <div class="field">
-      <label>Title</label>
-      <input type="text" name="recipe[title]" placeholder="title">
+<div class="container add-wrapper">
+  <div class="page-header">Add Recipe</div>
+  <form action="/recipes" method="POST">
+    <div class="form-group">
+      <label>Dish Name</label>
+      <input type="text" class="form-control" name="recipe[title]" placeholder="what's cooking good looking?">
     </div>
-    <div class="field">
+    <div class="form-group">
       <label>Image</label>
-      <input type="text" name="recipe[image]" placeholder="image">
+      <input type="text" class="form-control" name="recipe[image]" placeholder="add url">
     </div>
-    <div class="field">
+    <div class="form-group">
       <label>Ingredients</label>
-      <textarea name="recipe[ingredients]"></textarea>
+      <textarea name="recipe[ingredients]" class="form-control"></textarea>
     </div>
-    <div class="field">
+      <div class="form-group">
       <label>Instructions</label>  
-      <textarea name="recipe[instructions]"></textarea>
+      <textarea name="recipe[instructions]" class="form-control"></textarea>
     </div>
-    <input class="ui violet big basic button" type="submit">
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+  <a href="/recipes">Go back</a>
 </div>
 
 <% include ./partials/footer %>

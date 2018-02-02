@@ -1,21 +1,23 @@
 <% include ./partials/header %>
 
-<div class="ui main text container segment">
-  <div class="ui huge header"><%= recipe.title %></div>
-  <div class="ui top attached">
-    <div class="item">
-      <img class="ui centered round image" src="<%= recipe.image %>" width="300px">
-      <div class="description">
+<div class="container add-wrapper">
+  <div class="page-header"><%= recipe.title %></div>
+  <img class="card-img-top" src="<%= recipe.image %>" width="300px">
+  <div class="">
+    <div class="view-card">
+      <div class="card-body">
         <h2>Ingredients</h2>
         <p><%- recipe.ingredients %></p>
       </div>
-      <div class="description">
+      <div class="card-body">
         <h2>Instructions</h2>
         <p><%- recipe.instructions %></p>
       </div>
-      <a class="ui orange basic button" href="/recipes/<%= recipe._id %>/edit">Edit</a>
-      <form id="delete" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-        <button class="ui red basic button">Delete</button>
+    </div>
+    <div class="card-body">
+      <a class="btn btn-md btn-info" href="/recipes/<%= recipe._id %>/edit">Edit</a>
+      <form id="delete" action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST" style="display: inline">
+        <button class="btn btn-md btn-danger">Delete</button>
       </form>
     </div>
   </div>

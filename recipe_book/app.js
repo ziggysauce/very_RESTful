@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const expressSanitizer = require('express-sanitizer');
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // APP CONFIG
 mongoose.connect('mongodb://localhost/recipe_book');
@@ -25,7 +26,7 @@ const recipeBookSchema = new mongoose.Schema({
 const Recipe = mongoose.model('Recipes', recipeBookSchema);
 
 app.get('/', (req,res) => {
-  res.redirect('/recipes');
+  res.render('landing');
 });
 
 // INDEX ROUTE
@@ -99,6 +100,6 @@ app.delete('/recipes/:id', (req,res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('Server listening on port 3000');
 });
